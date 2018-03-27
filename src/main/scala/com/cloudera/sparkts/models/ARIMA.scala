@@ -404,7 +404,7 @@ class ARIMAModel(
     val d: Int, // differencing order
     val q: Int, // MA order
     val coefficients: Array[Double], // coefficients: intercept, AR, MA, with increasing degrees
-    val hasIntercept: Boolean = true) extends TimeSeriesModel {
+    val hasIntercept: Boolean = true) extends TimeSeriesModel with Serializable {
 
   /**
    * log likelihood based on conditional sum of squares

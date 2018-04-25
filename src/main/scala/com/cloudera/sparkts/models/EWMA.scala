@@ -137,7 +137,7 @@ class EWMAModel(val smoothing: Double) extends TimeSeriesModel {
     arr(0) = ts(0) // by definition in our model S_0 = X_0
 
     for (i <- 1 until ts.size) {
-      arr(i) = smoothing * ts(i) + (1 - smoothing) * dest(i - 1)
+      arr(i) = smoothing * ts(i) + (1 - smoothing) * arr(i - 1)
     }
     new DenseVector(arr)
   }
